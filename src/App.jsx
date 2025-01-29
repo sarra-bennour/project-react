@@ -2,9 +2,25 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { findLongestWord } from "./Ecmascript"; // Importation de la fonction
+
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const [words, setWords] = useState([]);
+    const [longest, setLongest] = useState(null);
+    const [input, setInput] = useState("");
+
+    const handleAddWord = () => {
+        if (input.trim()) {
+            const updatedWords = [...words, input.trim()];
+            setWords(updatedWords);
+            setLongest(findLongestWord(updatedWords));
+            setInput(""); 
+        }
+    };
+
 
   return (
     <>
@@ -28,8 +44,25 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+    <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <h2>Finder du Mot le Plus Long</h2>
+      <input 
+          type="text" 
+          value={input} 
+          onChange={(e) => setInput(e.target.value)} 
+          placeholder="Ajoutez un mot..." 
+      />
+      <button onClick={handleAddWord}>Ajouter</button>
+
+      <h3>Mots : {words.join(", ")}</h3>
+
+      {longest && (
+          <h3>Mot le plus long : {longest.mot} ({longest.longueur} lettres)</h3>
+      )}
+    </div>
     </>
   )
+  
 }
 
 export default App

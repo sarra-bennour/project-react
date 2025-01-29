@@ -1,15 +1,10 @@
-const findLongestWord = (words) => {
-    let [firstWord, ...restWords] = words;
-    const wordsWithLength = words.map(word => ({
-      mot: word,
-      longueur: word.length
-    }));
-    const longestWordObj = wordsWithLength.reduce((longest, current) => 
-      current.longueur > longest.longueur ? current : longest
-    );
-    return [longestWordObj.mot, longestWordObj.longueur];
-  };
-  
-  const result = findLongestWord(["chat", "éléphant", "girafe", "hippopotame"]);
-  console.log(result); 
-  
+export const findLongestWord = (wordsArray) => {
+  if (!wordsArray || wordsArray.length === 0) return { mot: "", longueur: 0 };
+
+  let wordsWithLength = wordsArray.map(word => ({ mot: word, longueur: word.length }));
+  let longestWord = wordsWithLength.reduce((max, current) => 
+      current.longueur > max.longueur ? current : max
+  );
+
+  return longestWord;
+};
