@@ -5,6 +5,9 @@ import './App.css'
 import { findLongestWord } from "./Ecmascript"; // Importation de la fonction
 import countOccurrences from "./Occurence"; // Importation de la fonction
 import total from "./TotalNote"; // Importation de la fonction
+import { Search } from './Ecmascript/function'; // Importation de la fonction
+
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +23,25 @@ function App() {
     { name: 'John', id: 200, marks: 45 },
     { name: 'Wick', id: 115, marks: 75 },
   ];
+
+  // Créer un tableau d'objets avec des identifiants uniques pour chaque entrée
+  let lastId = 0;
+
+  const Tab = [
+    { id: ++lastId, name: 'Alice', age: 25 },
+    { id: ++lastId, name: 'Bob', age: 30 },
+    { id: ++lastId, name: 'Charlie', age: 35 }
+  ];
+
+  // Ajouter de nouvelles entrées
+  Tab.push({ id: ++lastId, name: 'David', age: 40 });
+  Tab.unshift({ id: ++lastId, name: 'Eve', age: 22 });
+
+  console.log("Tab:", Tab); // Afficher le tableau Tab dans la console
+
+  const result = Search(Tab, 2); // Rechercher l'objet avec l'ID 2
+  console.log("Search result:", result); // Afficher le résultat de la recherche dans la console
+//***********************************************************/
 
   const [words, setWords] = useState([]);
   const [longest, setLongest] = useState(null);
