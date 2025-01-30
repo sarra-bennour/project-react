@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { findLongestWord } from "./Ecmascript"; // Importation de la fonction
+import { findLong } from "./Ecmascript"; // Importation de la fonction
 import countOccurrences from "./Occurence"; // Importation de la fonction
 import total from "./TotalNote"; // Importation de la fonction
 import { Search } from './Ecmascript/function'; // Importation de la fonction
@@ -24,6 +24,8 @@ function App() {
     { name: 'Wick', id: 115, marks: 75 },
   ];
 
+
+
   // Créer un tableau d'objets avec des identifiants uniques pour chaque entrée
   let lastId = 0;
 
@@ -43,6 +45,9 @@ function App() {
   console.log("Search result:", result); // Afficher le résultat de la recherche dans la console
 //***********************************************************/
 
+const wordss = findLong(["hello", "world", "foo", "bar"]);
+console.log("result"+wordss);
+
   const [words, setWords] = useState([]);
   const [longest, setLongest] = useState(null);
   const [input, setInput] = useState("");
@@ -57,7 +62,7 @@ function App() {
   };
 
   const occurrences = countOccurrences(inputOcc);
-  console.log(occurrences);
+  console.log("output ",occurrences);
 
   const totalNote = total(students);
   console.log(totalNote);
