@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     triggers {
-        // Déclenche l'exécution du pipeline à une fréquence spécifique
-        cron('H 12 * * 1-5')  // Exécution chaque jour de la semaine à 12h (lundi à vendredi)
+        // Vérifie toutes les 5 minutes si des modifications ont été poussées dans le dépôt
+        pollSCM('H/5 * * * *')
     }
 
     stages {
