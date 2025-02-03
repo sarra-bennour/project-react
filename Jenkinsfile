@@ -3,7 +3,7 @@ pipeline {
 
     triggers {
         // Vérifie toutes les 5 minutes si des modifications ont été poussées dans le dépôt
-        pollSCM('H/1 * * * *')
+        githubPush()
     }
 
     stages {
