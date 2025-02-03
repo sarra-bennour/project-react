@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     triggers {
-        // Trigger the pipeline when a GitHub webhook is received
-        githubPush()
+        // Déclenche l'exécution du pipeline à une fréquence spécifique
+        cron('H 12 * * 1-5')  // Exécution chaque jour de la semaine à 12h (lundi à vendredi)
     }
 
     stages {
