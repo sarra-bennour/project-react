@@ -24,7 +24,7 @@ pipeline {
     }
 
     post {
-        always {
+        success {
             echo 'Build completed.'
         }
     }
