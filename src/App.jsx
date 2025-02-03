@@ -6,8 +6,11 @@ import { findLong } from "./Ecmascript"; // Importation de la fonction
 import countOccurrences from "./Occurence"; // Importation de la fonction
 import total from "./TotalNote"; // Importation de la fonction
 import { Search } from './Ecmascript/function'; // Importation de la fonction
+import Hello from './Components/Hello';
+import Form from './Components/Form';
+import Buton from './Components/Button';
 
-
+//hellooooooooooooooooooooo
 
 function App() {
   const [count, setCount] = useState(0);
@@ -69,7 +72,7 @@ console.log("result"+wordss);
 
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -104,7 +107,13 @@ console.log("result"+wordss);
         {longest && (
           <h3>Mot le plus long : {longest.mot} ({longest.longueur} lettres)</h3>
         )}
-      </div>
+      </div> */}
+    <Hello />
+    <Form labelle="Firstname" namee="firstname"/>
+    <Form labelle="Lastname" namee="lastname"/>
+    <Buton />
+
+
     </>
   );
 }
