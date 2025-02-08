@@ -11,7 +11,7 @@ const Event = ({ event, onBook, onLike }) => {
         <Card.Text>Price: {event.price} TND</Card.Text>
         <Card.Text>Number Of Tickets: {event.nbTickets}</Card.Text>
         <Card.Text>Number Of Participants: {event.nbParticipants}</Card.Text>
-        <Button variant="primary" onClick={() => onBook(event.id)} disabled={event.nbParticipants - event.nbTickets  === 0}>
+        <Button variant="primary" onClick={() => onBook(event.id)} disabled={event.nbParticipants - event.nbTickets === 0}>
           {event.nbParticipants - event.nbTickets > 0 ? 'Book an event' : 'Sold Out'}
         </Button>
         <Button variant="secondary" className="ms-2" onClick={() => onLike(event.id)}>

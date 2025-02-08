@@ -47,17 +47,17 @@ const Events = () => {
   return (
     <Container>
       {/* {showWelcome && <Alert variant="success">Bienvenue sur la gestion des événements !</Alert>} */}
-      
+
       {/* Afficher l'alerte de succès après l'achat */}
       {showBuyAlert && <Alert variant="success">Achat réussi !</Alert>}
 
       <Row>
-        {events.map(event => (
-          <Col key={event.id} md={4}>
+        {events.map((event, index) => (
+          <Col key={index} md={4}>
             <Event event={event} onBook={handleBook} onLike={handleLike} />
-            <Button 
-              variant="success" 
-              onClick={() => handleBuy(event.id)} 
+            <Button
+              variant="success"
+              onClick={() => handleBuy(index)}
               disabled={event.nbTickets === 0}
             >
               {event.nbTickets > 0 ? 'Acheter un billet' : 'Épuisé'}
