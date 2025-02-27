@@ -6,6 +6,8 @@
 //      );
 // }
 
+import { useState } from "react";
+
 // export default Hello;
 
 // class Holle extends Component {
@@ -22,9 +24,10 @@
 // export default Hello;
 
 export default function Hello() {
+    const [name] = useState("");
         return ( 
             <>
-                <h1>Hello 4TWIN7 !</h1> 
+                <h1>Hello 4TWIN7 !{name}</h1> 
             </>
          );
     }   

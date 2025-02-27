@@ -9,6 +9,8 @@ import { Search } from './Ecmascript/function'; // Importation de la fonction
 import Hello from './Components/Hello';
 import Form from './Components/Form';
 import Buton from './Components/Button';
+import { Route, Routes } from 'react-router-dom';
+import NotFound from './Components/NotFound';
 
 //bonjourrr
 function App() {
@@ -107,10 +109,15 @@ console.log("result"+wordss);
           <h3>Mot le plus long : {longest.mot} ({longest.longueur} lettres)</h3>
         )}
       </div> */}
-    <Hello />
-    <Form labelle="Firstname" namee="firstname"/>
+    {/* <Hello /> */}
+    <Routes>
+      <Route path="/hello" element={<Hello />} />
+      <Route path="/hello/:name" element={<Hello />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+    {/* <Form labelle="Firstname" namee="firstname"/>
     <Form labelle="Lastname" namee="lastname"/>
-    <Buton />
+    <Buton /> */}
 
 
     </>
